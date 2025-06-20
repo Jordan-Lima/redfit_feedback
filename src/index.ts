@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import feedbackRouter from './controllers/FeedbackController';
 
+// Importa o arquivo cronAPI para iniciar o cron job
+import './cronAPI';
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
