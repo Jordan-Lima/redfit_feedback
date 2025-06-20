@@ -6,9 +6,14 @@ import feedbackRouter from './controllers/FeedbackController';
 import './cronAPI';
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 80;
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://feedback-redfit.web.app',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/', feedbackRouter);
